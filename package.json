@@ -1,8 +1,0 @@
-{
-  "name": "mbda-monitoring-system",
-  "version": "1.0.0",
-  "description": "MBDA Monitoring System",
-  "scripts": {
-    "build": "echo 'No build required for static site'"
-  }
-}
