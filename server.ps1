@@ -4,7 +4,7 @@ $listener.Start()
 Write-Host "Server started at http://localhost:8080"
 Write-Host "Press Ctrl+C to stop"
 
-$baseDir = "C:\Users\POY\Desktop\MBDA WEBSITE\MBDA WEBSITE"
+$baseDir = "C:\Users\sonny\Desktop\MBDAWEB"
 
 while ($listener.IsListening) {
     $context = $listener.GetContext()

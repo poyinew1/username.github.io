@@ -18,16 +18,6 @@
             background-color: #f5f7fa;
             display: flex;
             min-height: 100vh;
-            -webkit-tap-highlight-color: transparent;
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            user-select: none;
-        }
-
-        /* Enable text selection for inputs and content areas */
-        input, textarea, .notification-item, .app-list-item {
-            -webkit-user-select: text;
-            user-select: text;
         }
 
         /* Sidebar Styles */
@@ -79,7 +69,7 @@
             align-items: center;
             gap: 12px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.1s;
+            transition: background 0.3s;
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
         }
@@ -87,10 +77,6 @@
         .nav-item:hover {
             background: rgba(255, 255, 255, 0.1);
             color: white;
-        }
-
-        .nav-item:active {
-            transform: scale(0.98);
         }
 
         .nav-item.active {
@@ -196,28 +182,6 @@
             font-weight: 600;
         }
 
-        /* App-style sticky header */
-        .app-sticky-header {
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 100;
-            padding: 16px;
-            border-bottom: 1px solid #e0e0e0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .app-sticky-header .header {
-            margin-bottom: 0;
-        }
-
-        .app-sticky-header h1 {
-            font-size: 20px;
-            margin: 0;
-        }
-
         .header-actions {
             display: flex;
             gap: 15px;
@@ -261,32 +225,6 @@
         .notification-dropdown.show {
             display: block;
             animation: slideDown 0.3s ease;
-        }
-
-        /* Mobile-specific notification improvements */
-        @media (max-width: 768px) {
-            .notification-dropdown {
-                position: fixed;
-                top: auto;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                width: 100%;
-                border-radius: 12px 12px 0 0;
-                max-height: 70vh;
-                animation: slideUp 0.3s ease;
-            }
-
-            @keyframes slideUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(100%);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
         }
 
         @keyframes slideDown {
@@ -337,16 +275,11 @@
             padding: 15px 20px;
             border-bottom: 1px solid #f0f0f0;
             cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
+            transition: background 0.2s;
         }
 
         .notification-item:hover {
             background: #f8f9fa;
-        }
-
-        .notification-item:active {
-            transform: scale(0.98);
-            background: #f0f0f0;
         }
 
         .notification-item:last-child {
@@ -483,17 +416,6 @@
             display: flex;
             align-items: center;
             gap: 15px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-        }
-
-        .stat-card:active {
-            transform: scale(0.98);
         }
 
         .stat-icon {
@@ -798,14 +720,10 @@
             font-size: 11px;
             font-weight: 500;
             margin-right: 4px;
-            transition: all 0.3s ease, transform 0.1s;
+            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 3px;
-        }
-
-        .action-btn:active {
-            transform: scale(0.95);
         }
 
         .action-btn:last-child {
@@ -1270,432 +1188,19 @@
 
             .main-content {
                 margin-left: 0;
-                padding: 20px 15px;
-            }
-
-            .mobile-menu-btn {
-                display: flex;
-            }
-
-            .header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-            }
-
-            .header h1 {
-                font-size: 22px;
-            }
-
-            .header-actions {
-                width: 100%;
-                justify-content: space-between;
             }
 
             .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 15px;
-            }
-
-            .stat-card {
-                padding: 15px;
-            }
-
-            .stat-info .value {
-                font-size: 24px;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             }
 
             .table-header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 15px;
-            }
-
-            .table-actions {
-                width: 100%;
-                flex-direction: column;
-            }
-
-            .search-box {
-                width: 100%;
             }
 
             .search-box input {
                 width: 100%;
-            }
-
-            .filter-select {
-                width: 100%;
-            }
-
-            .table-container {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            table {
-                font-size: 12px;
-            }
-
-            th, td {
-                padding: 10px 8px;
-            }
-
-            .action-btn {
-                padding: 3px 6px;
-                font-size: 10px;
-            }
-
-            .notification-dropdown {
-                width: 300px;
-                right: -10px;
-            }
-
-            .modal-content {
-                width: 95%;
-                max-height: 85vh;
-                padding: 20px;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            #locationMap, #editLocationMap, #trackerMap {
-                height: 200px;
-            }
-
-            .map-controls {
-                flex-direction: column;
-            }
-
-            .pagination {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .pagination-controls {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            /* Mobile Typography Optimizations */
-            body {
-                font-size: 14px;
-                line-height: 1.5;
-            }
-
-            h1 {
-                font-size: 20px;
-                line-height: 1.3;
-            }
-
-            h2 {
-                font-size: 18px;
-                line-height: 1.3;
-            }
-
-            h3 {
-                font-size: 16px;
-                line-height: 1.3;
-            }
-
-            p {
-                font-size: 14px;
-                line-height: 1.6;
-            }
-
-            /* Improved spacing for mobile */
-            .main-content {
-                padding: 16px;
-            }
-
-            .stats-grid {
-                gap: 12px;
-            }
-
-            .stat-card {
-                padding: 16px;
-                gap: 12px;
-            }
-
-            .table-section {
-                padding: 16px;
-                margin-bottom: 16px;
-            }
-
-            .table-header {
-                margin-bottom: 16px;
-            }
-
-            /* Better touch targets */
-            button, .nav-item, .action-btn {
-                min-height: 44px;
-                min-width: 44px;
-            }
-
-            .search-box input, .filter-select {
-                min-height: 44px;
-                font-size: 16px; /* Prevents iOS zoom */
-            }
-        }
-
-        @media (max-width: 480px) {
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .header h1 {
-                font-size: 18px;
-            }
-
-            .notification-dropdown {
-                width: 280px;
-            }
-
-            .add-btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .table-section {
-                padding: 15px;
-            }
-
-            .user-avatar {
-                width: 30px;
-                height: 30px;
-                font-size: 12px;
-            }
-
-            /* Mobile App Bottom Navigation */
-            .mobile-bottom-nav {
-                display: flex;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: white;
-                border-top: 1px solid #e0e0e0;
-                padding: 8px 0;
-                z-index: 1000;
-                box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-            }
-
-            .mobile-nav-item {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-decoration: none;
-                color: #666;
-                font-size: 10px;
-                padding: 5px;
-                transition: all 0.3s;
-            }
-
-            .mobile-nav-item.active {
-                color: #4a90e2;
-            }
-
-            .mobile-nav-item svg {
-                width: 24px;
-                height: 24px;
-                margin-bottom: 4px;
-            }
-
-            .mobile-nav-item:active {
-                transform: scale(0.95);
-            }
-
-            /* Floating Action Button */
-            .fab {
-                position: fixed;
-                bottom: 80px;
-                right: 20px;
-                width: 56px;
-                height: 56px;
-                background: #4a90e2;
-                color: white;
-                border: none;
-                border-radius: 50%;
-                box-shadow: 0 4px 12px rgba(74, 144, 226, 0.4);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                z-index: 999;
-                transition: all 0.3s;
-            }
-
-            .fab:hover {
-                transform: scale(1.1);
-                box-shadow: 0 6px 16px rgba(74, 144, 226, 0.5);
-            }
-
-            .fab:active {
-                transform: scale(0.95);
-            }
-
-            .fab svg {
-                width: 24px;
-                height: 24px;
-            }
-
-            /* App-style Cards */
-            .app-card {
-                background: white;
-                border-radius: 16px;
-                padding: 16px;
-                margin-bottom: 16px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-                transition: transform 0.2s, box-shadow 0.2s;
-            }
-
-            .app-card:active {
-                transform: scale(0.98);
-                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
-            }
-
-            /* App-style List Items */
-            .app-list-item {
-                display: flex;
-                align-items: center;
-                padding: 16px;
-                background: white;
-                border-radius: 12px;
-                margin-bottom: 12px;
-                box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-                transition: all 0.2s;
-            }
-
-            .app-list-item:active {
-                transform: scale(0.98);
-                background: #f8f9fa;
-            }
-
-            /* App-style Buttons */
-            .app-btn {
-                padding: 16px 24px;
-                border-radius: 12px;
-                font-size: 16px;
-                font-weight: 600;
-                transition: all 0.2s;
-                border: none;
-                cursor: pointer;
-            }
-
-            .app-btn:active {
-                transform: scale(0.95);
-            }
-
-            /* App-style Status Bars */
-            .app-status-bar {
-                background: #f8f9fa;
-                padding: 12px 16px;
-                border-radius: 8px;
-                margin-bottom: 12px;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-            }
-
-            /* Hide sidebar on mobile - use bottom nav instead */
-            .sidebar {
-                display: none;
-            }
-
-            .main-content {
-                margin-left: 0;
-                padding-bottom: 80px; /* Space for bottom nav */
-            }
-
-            .mobile-menu-btn {
-                display: none;
-            }
-
-            /* App-style Header */
-            .app-header {
-                position: sticky;
-                top: 0;
-                background: white;
-                z-index: 100;
-                padding: 16px;
-                border-bottom: 1px solid #e0e0e0;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            }
-
-            .header {
-                margin-bottom: 20px;
-            }
-
-            /* App-style Table as Cards */
-            table {
-                display: none;
-            }
-
-            .app-cards-container {
-                display: block;
-            }
-
-            .app-incident-card {
-                background: white;
-                border-radius: 12px;
-                padding: 16px;
-                margin-bottom: 12px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-                transition: transform 0.2s;
-            }
-
-            .app-incident-card:active {
-                transform: scale(0.98);
-            }
-
-            .app-incident-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 12px;
-            }
-
-            .app-incident-id {
-                font-weight: 600;
-                color: #1e3a5f;
-                font-size: 14px;
-            }
-
-            .app-incident-type {
-                font-size: 12px;
-                color: #666;
-            }
-
-            .app-incident-details {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .app-incident-detail {
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                font-size: 13px;
-                color: #333;
-            }
-
-            .app-incident-actions {
-                display: flex;
-                gap: 8px;
-                margin-top: 12px;
-                padding-top: 12px;
-                border-top: 1px solid #f0f0f0;
-            }
-
-            .app-incident-actions .action-btn {
-                flex: 1;
-                justify-content: center;
-                min-height: 36px;
             }
         }
 
@@ -1728,43 +1233,9 @@
             width: 24px;
             height: 24px;
         }
-
-        /* Overlay for mobile sidebar */
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        .sidebar-overlay.show {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar-overlay.show {
-                display: block;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Mobile Menu Button -->
-    <button class="mobile-menu-btn" onclick="toggleSidebar()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-    </button>
-
-    <!-- Sidebar Overlay -->
-    <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
-
     <!-- Sidebar -->
     <div class="sidebar">
         <div class="sidebar-header">
@@ -1865,59 +1336,10 @@
 
     <!-- Main Content -->
     <div class="main-content">
-        <!-- Mobile Bottom Navigation -->
-        <div class="mobile-bottom-nav" style="display: none;">
-            <a href="#" class="mobile-nav-item active" onclick="showSection('dashboard', this); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <rect x="3" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="3" width="7" height="7"></rect>
-                    <rect x="14" y="14" width="7" height="7"></rect>
-                    <rect x="3" y="14" width="7" height="7"></rect>
-                </svg>
-                <span>Dashboard</span>
-            </a>
-            <a href="#" class="mobile-nav-item" onclick="showSection('maptracker', this); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
-                </svg>
-                <span>Map</span>
-            </a>
-            <a href="#" class="mobile-nav-item" onclick="showSection('incidents', this); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-                <span>Incidents</span>
-            </a>
-            <a href="#" class="mobile-nav-item" onclick="showSection('accounts', this); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <span>Accounts</span>
-            </a>
-            <a href="#" class="mobile-nav-item" onclick="handleLogout(); return false;">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
-                    <polyline points="16 17 21 12 16 7"></polyline>
-                    <line x1="21" y1="12" x2="9" y2="12"></line>
-                </svg>
-                <span>Logout</span>
-            </a>
-        </div>
-
-        <!-- Floating Action Button for adding incidents -->
-        <button class="fab" style="display: none;" onclick="openModal()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="12" y1="5" x2="12" y2="19"></line>
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-            </svg>
-        </button>
         <!-- Dashboard Section -->
         <div id="dashboardSection" class="content-section active">
-            <div class="app-sticky-header">
-                <div class="header">
-                    <h1>MBDA Executive Dashboard</h1>
+            <div class="header">
+                <h1>MBDA Executive Dashboard</h1>
                 <div class="header-actions">
                     <div class="date-display" id="currentDate"></div>
                     <div style="position: relative;">
@@ -2059,11 +1481,6 @@
                 </table>
             </div>
 
-            <!-- App-style cards for mobile -->
-            <div class="app-cards-container" id="appCardsContainer" style="display: none;">
-                <!-- Cards will be populated by JavaScript -->
-            </div>
-
             <div class="pagination">
                 <div class="pagination-info">Showing 0 of 0 incidents</div>
                 <div class="pagination-controls">
@@ -2081,12 +1498,11 @@
 
         <!-- Map Tracker Section -->
         <div id="maptrackerSection" class="content-section">
-            <div class="app-sticky-header">
-                <div class="header">
-                    <div>
-                        <h1>Real-time Map Tracker</h1>
-                        <p style="color: #666; font-size: 14px; margin-top: 5px;">Live incident locations on the map. Red markers for high severity, orange for moderate, green for minor.</p>
-                    </div>
+            <div class="header">
+                <div>
+                    <h1>Real-time Map Tracker</h1>
+                    <p style="color: #666; font-size: 14px; margin-top: 5px;">Live incident locations on the map. Red markers for high severity, orange for moderate, green for minor.</p>
+                </div>
                 <div class="header-actions">
                     <div class="search-box" style="margin-right: 15px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2114,7 +1530,6 @@
                         </div>
                     </div>
                     <div class="user-avatar" style="width: 40px; height: 40px; background: #4a90e2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">JD</div>
-                </div>
                 </div>
             </div>
 
@@ -2205,12 +1620,11 @@
 
         <!-- Incidents Section -->
         <div id="incidentsSection" class="content-section">
-            <div class="app-sticky-header">
-                <div class="header">
-                    <div>
-                        <h1>Road Incident Log</h1>
-                        <p style="color: #666; font-size: 14px; margin-top: 5px;">View resolved and closed incidents. New incidents are reported in Dashboard and automatically transferred here when resolved.</p>
-                    </div>
+            <div class="header">
+                <div>
+                    <h1>Road Incident Log</h1>
+                    <p style="color: #666; font-size: 14px; margin-top: 5px;">View resolved and closed incidents. New incidents are reported in Dashboard and automatically transferred here when resolved.</p>
+                </div>
                 <div class="header-actions">
                     <div class="search-box" style="margin-right: 15px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2238,7 +1652,6 @@
                         </div>
                     </div>
                     <div class="user-avatar" style="width: 40px; height: 40px; background: #4a90e2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">JD</div>
-                </div>
                 </div>
             </div>
 
@@ -2357,11 +1770,6 @@
                     </table>
                 </div>
 
-                <!-- App-style cards for mobile incidents -->
-                <div class="app-cards-container" id="incidentsAppCardsContainer" style="display: none;">
-                    <!-- Cards will be populated by JavaScript -->
-                </div>
-
                 <div class="pagination">
                     <div class="pagination-info">Showing 0 of 0 incidents</div>
                     <div class="pagination-controls">
@@ -2375,12 +1783,11 @@
 
         <!-- Locations Section -->
         <div id="locationsSection" class="content-section">
-            <div class="app-sticky-header">
-                <div class="header">
-                    <div>
-                        <h1>Locations Management</h1>
-                        <p style="color: #666; font-size: 14px; margin-top: 5px;">Manage and monitor patrol locations, coverage areas, and hotspots.</p>
-                    </div>
+            <div class="header">
+                <div>
+                    <h1>Locations Management</h1>
+                    <p style="color: #666; font-size: 14px; margin-top: 5px;">Manage and monitor patrol locations, coverage areas, and hotspots.</p>
+                </div>
                 <div class="header-actions">
                     <div class="search-box" style="margin-right: 15px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2408,7 +1815,6 @@
                         </div>
                     </div>
                     <div class="user-avatar" style="width: 40px; height: 40px; background: #4a90e2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">JD</div>
-                </div>
                 </div>
             </div>
 
@@ -2536,12 +1942,11 @@
 
         <!-- Accounts Section -->
         <div id="accountsSection" class="content-section">
-            <div class="app-sticky-header">
-                <div class="header">
-                    <div>
-                        <h1>Account Management</h1>
-                        <p style="color: #666; font-size: 14px; margin-top: 5px;">Manage user accounts, roles, and permissions for the MBDA system.</p>
-                    </div>
+            <div class="header">
+                <div>
+                    <h1>Account Management</h1>
+                    <p style="color: #666; font-size: 14px; margin-top: 5px;">Manage user accounts, roles, and permissions for the MBDA system.</p>
+                </div>
                 <div class="header-actions">
                     <div class="search-box" style="margin-right: 15px;">
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -2549,6 +1954,24 @@
                             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
                         <input type="text" placeholder="Search accounts..." style="width: 200px;">
+                    </div>
+                    <div style="position: relative;">
+                        <div class="notification-btn" onclick="toggleNotificationDropdown(this)">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                            </svg>
+                            <div class="notification-badge" id="accountsNotificationBadge">0</div>
+                        </div>
+                        <div class="notification-dropdown" id="notificationDropdown">
+                            <div class="notification-header">
+                                <h3>Notifications</h3>
+                                <button class="clear-notifications-btn" onclick="clearNotifications()">Clear All</button>
+                            </div>
+                            <div class="notification-list" id="notificationList">
+                                <!-- Notifications will be populated by JavaScript -->
+                            </div>
+                        </div>
                     </div>
                     <div class="user-avatar" style="width: 40px; height: 40px; background: #4a90e2; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;">JD</div>
                 </div>
@@ -3166,66 +2589,6 @@
             }
         }
 
-        // Toggle sidebar for mobile
-        function toggleSidebar() {
-            const sidebar = document.querySelector('.sidebar');
-            const overlay = document.querySelector('.sidebar-overlay');
-            
-            sidebar.classList.toggle('open');
-            overlay.classList.toggle('show');
-        }
-
-        // Mobile navigation responsive handler
-        function handleMobileNav() {
-            const mobileNav = document.querySelector('.mobile-bottom-nav');
-            const fab = document.querySelector('.fab');
-            const sidebar = document.querySelector('.sidebar');
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const table = document.getElementById('incidentTable');
-            const appCards = document.getElementById('appCardsContainer');
-            const incidentsTable = document.getElementById('incidentsTable');
-            const incidentsAppCards = document.getElementById('incidentsAppCardsContainer');
-
-            if (window.innerWidth <= 480) {
-                // Show mobile navigation on small screens
-                if (mobileNav) mobileNav.style.display = 'flex';
-                if (fab) fab.style.display = 'flex';
-                if (sidebar) sidebar.style.display = 'none';
-                if (mobileMenuBtn) mobileMenuBtn.style.display = 'none';
-                // Show app cards instead of tables
-                if (table) table.style.display = 'none';
-                if (appCards) appCards.style.display = 'block';
-                if (incidentsTable) incidentsTable.style.display = 'none';
-                if (incidentsAppCards) incidentsAppCards.style.display = 'block';
-            } else if (window.innerWidth <= 768) {
-                // Show hamburger menu on tablets
-                if (mobileNav) mobileNav.style.display = 'none';
-                if (fab) fab.style.display = 'none';
-                if (sidebar) sidebar.style.display = 'flex';
-                if (mobileMenuBtn) mobileMenuBtn.style.display = 'flex';
-                // Show tables on tablets
-                if (table) table.style.display = 'table';
-                if (appCards) appCards.style.display = 'none';
-                if (incidentsTable) incidentsTable.style.display = 'table';
-                if (incidentsAppCards) incidentsAppCards.style.display = 'none';
-            } else {
-                // Show sidebar on desktop
-                if (mobileNav) mobileNav.style.display = 'none';
-                if (fab) fab.style.display = 'none';
-                if (sidebar) sidebar.style.display = 'flex';
-                if (mobileMenuBtn) mobileMenuBtn.style.display = 'none';
-                // Show tables on desktop
-                if (table) table.style.display = 'table';
-                if (appCards) appCards.style.display = 'none';
-                if (incidentsTable) incidentsTable.style.display = 'table';
-                if (incidentsAppCards) incidentsAppCards.style.display = 'none';
-            }
-        }
-
-        // Initialize mobile navigation on load and resize
-        window.addEventListener('load', handleMobileNav);
-        window.addEventListener('resize', handleMobileNav);
-
         // Section navigation function
         function showSection(sectionName, navElement) {
             // Prevent non-admins from accessing accounts section
@@ -3242,45 +2605,11 @@
             // Show selected section
             document.getElementById(sectionName + 'Section').classList.add('active');
             
-            // Update navigation active state (desktop sidebar)
+            // Update navigation active state
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
             });
-            if (navElement) {
-                navElement.classList.add('active');
-            }
-            
-            // Update mobile navigation active state
-            document.querySelectorAll('.mobile-nav-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Find and activate corresponding mobile nav item
-            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
-            mobileNavItems.forEach(item => {
-                const onclickAttr = item.getAttribute('onclick');
-                if (onclickAttr && onclickAttr.includes(sectionName)) {
-                    item.classList.add('active');
-                }
-            });
-            
-            // Show/hide FAB based on section
-            const fab = document.querySelector('.fab');
-            if (fab) {
-                if (sectionName === 'dashboard') {
-                    fab.style.display = 'flex';
-                } else {
-                    fab.style.display = 'none';
-                }
-            }
-            
-            // Close mobile sidebar after navigation
-            const sidebar = document.querySelector('.sidebar');
-            const overlay = document.querySelector('.sidebar-overlay');
-            if (window.innerWidth <= 768) {
-                sidebar.classList.remove('open');
-                overlay.classList.remove('show');
-            }
+            navElement.classList.add('active');
             
             // Initialize incidents table if showing incidents section
             if (sectionName === 'incidents') {
@@ -4074,198 +3403,11 @@
             alert('Add Location feature is coming soon.\n\nThis will allow you to add new patrol locations with coordinates, risk levels, and patrol assignments.');
         }
 
-        // Function to render incidents app-style cards for mobile
-        function renderIncidentsAppCards(data) {
-            const cardsContainer = document.getElementById('incidentsAppCardsContainer');
-            if (!cardsContainer) return;
-
-            cardsContainer.innerHTML = '';
-
-            data.forEach(incident => {
-                const card = document.createElement('div');
-                card.className = 'app-incident-card';
-
-                const responseTimeDisplay = incident.responseTime ? 
-                    formatResponseTime(incident.responseTime, incident.createdAt) : 'Pending';
-
-                card.innerHTML = `
-                    <div class="app-incident-header">
-                        <div class="app-incident-id">${incident.id}</div>
-                        <span class="severity-badge severity-${incident.severity}">${incident.severity.charAt(0).toUpperCase() + incident.severity.slice(1)}</span>
-                    </div>
-                    <div class="app-incident-details">
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                            <span>${incident.type}</span>
-                        </div>
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <span>${incident.location}</span>
-                        </div>
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                            </svg>
-                            <span>${incident.reportedBy}</span>
-                        </div>
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                            <span>${responseTimeDisplay}</span>
-                        </div>
-                    </div>
-                    <div class="app-incident-actions">
-                        <button class="action-btn view" onclick="viewIncident('${incident.id}')">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                            View
-                        </button>
-                        ${incident.coordinates ? `
-                        <button class="action-btn view" onclick="locateIncidentFromTable('${incident.id}')">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            Locate
-                        </button>
-                        ` : ''}
-                    </div>
-                `;
-
-                cardsContainer.appendChild(card);
-            });
-        }
-
-        // Function to render app-style cards for mobile
-        function renderAppCards(data) {
-            const cardsContainer = document.getElementById('appCardsContainer');
-            if (!cardsContainer) return;
-
-            cardsContainer.innerHTML = '';
-
-            const currentUserId = getCurrentUserId();
-            const isAdmin = isCurrentUserAdmin();
-
-            data.forEach(incident => {
-                const card = document.createElement('div');
-                card.className = 'app-incident-card';
-
-                const responseTimeDisplay = incident.responseTime ? 
-                    formatResponseTime(incident.responseTime, incident.createdAt) : 'Pending';
-
-                // Check if current user can edit this incident
-                const canEdit = isAdmin || (incident.createdBy && incident.createdBy === currentUserId);
-                const canResolve = isAdmin || (incident.createdBy && incident.createdBy === currentUserId);
-                const canDelete = isAdmin || (incident.createdBy && incident.createdBy === currentUserId);
-
-                // Build action buttons
-                let actionButtons = `
-                    <button class="action-btn view" onclick="viewIncident('${incident.id}')">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                            <circle cx="12" cy="12" r="3"></circle>
-                        </svg>
-                        View
-                    </button>
-                `;
-
-                if (canEdit) {
-                    actionButtons += `
-                        <button class="action-btn edit" onclick="editIncident('${incident.id}')">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                            </svg>
-                            Edit
-                        </button>
-                    `;
-                }
-
-                if (canResolve) {
-                    actionButtons += `
-                        <button class="action-btn response" onclick="respondToIncident('${incident.id}')" ${incident.status === 'resolved' || incident.status === 'closed' || incident.status === 'active' ? 'style="display: none;"' : ''}>
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                            Resolve
-                        </button>
-                    `;
-                }
-
-                if (canDelete) {
-                    actionButtons += `
-                        <button class="action-btn delete" onclick="deleteIncident('${incident.id}')">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="3 6 5 6 21 6"></polyline>
-                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                            </svg>
-                            Delete
-                        </button>
-                    `;
-                }
-
-                card.innerHTML = `
-                    <div class="app-incident-header">
-                        <div class="app-incident-id">${incident.id}</div>
-                        <span class="severity-badge severity-${incident.severity}">${incident.severity.charAt(0).toUpperCase() + incident.severity.slice(1)}</span>
-                    </div>
-                    <div class="app-incident-details">
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                            </svg>
-                            <span>${incident.type}</span>
-                        </div>
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                            <span>${incident.location}</span>
-                        </div>
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="9" cy="7" r="4"></circle>
-                            </svg>
-                            <span>${incident.reportedBy}</span>
-                        </div>
-                        <div class="app-incident-detail">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                            <span>${responseTimeDisplay}</span>
-                        </div>
-                    </div>
-                    <div class="app-incident-actions">
-                        ${actionButtons}
-                    </div>
-                `;
-
-                cardsContainer.appendChild(card);
-            });
-        }
-
         // Function to render table
         function renderTable(data) {
             const tbody = document.getElementById('tableBody');
             tbody.innerHTML = '';
-
-            // Also render app cards for mobile
-            renderAppCards(data);
-
+            
             const currentUserId = getCurrentUserId();
             const isAdmin = isCurrentUserAdmin();
 
@@ -4384,9 +3526,6 @@
             const tbody = document.getElementById('incidentsTableBody');
             tbody.innerHTML = '';
 
-            // Also render app cards for mobile
-            renderIncidentsAppCards(data);
-
             data.forEach(incident => {
                 const row = document.createElement('tr');
                 
@@ -4487,22 +3626,6 @@
         document.getElementById('searchInput').addEventListener('input', filterIncidents);
         document.getElementById('severityFilter').addEventListener('change', filterIncidents);
         document.getElementById('statusFilter').addEventListener('change', filterIncidents);
-        
-        // Event listeners for incidents section filters
-        document.getElementById('incidentsSearchInput').addEventListener('input', filterIncidentsLog);
-        document.getElementById('incidentsTypeFilter').addEventListener('change', filterIncidentsLog);
-        document.getElementById('incidentsSeverityFilter').addEventListener('change', filterIncidentsLog);
-        document.getElementById('incidentsStatusFilter').addEventListener('change', filterIncidentsLog);
-        
-        // Event listeners for locations filters
-        document.getElementById('locationsSearchInput').addEventListener('input', filterLocations);
-        document.getElementById('locationsTypeFilter').addEventListener('change', filterLocations);
-        document.getElementById('locationsRiskFilter').addEventListener('change', filterLocations);
-        
-        // Event listeners for accounts filters
-        document.getElementById('accountsSearchInput').addEventListener('input', filterAccounts);
-        document.getElementById('accountsRoleFilter').addEventListener('change', filterAccounts);
-        document.getElementById('accountsStatusFilter').addEventListener('change', filterAccounts);
 
         // Action functions
         function viewIncident(id) {
@@ -5801,6 +4924,13 @@
             if (locationsBadge) {
                 const activePatrols = locationsData.filter(loc => loc.patrolStatus === 'active').length;
                 locationsBadge.textContent = activePatrols;
+            }
+            
+            // Update accounts notification badge (pending requests - mock data)
+            const accountsBadge = document.getElementById('accountsNotificationBadge');
+            if (accountsBadge) {
+                const pendingRequests = accountsData.filter(acc => acc.status === 'pending').length;
+                accountsBadge.textContent = pendingRequests;
             }
             
             // Update notification list
